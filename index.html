@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aplikasi Komputer untuk Akuntansi</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f4f7f5;--cd:#fff;--tx:#14231c;--mu:#5b6b63;--ac:#107c41;--bl:#185abd;--bd:#d9e2dd;--ok:#0a7d3b;--no:#c0392b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0e1612;--cd:#16211b;--tx:#e8f0ec;--mu:#9bb0a5;--ac:#3fbf7a;--bl:#7aa7ff;--bd:#2a3a31;--ok:#3fbf7a;--no:#ff7b6b}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0e1612;--cd:#16211b;--tx:#e8f0ec;--mu:#9bb0a5;--ac:#3fbf7a;--bl:#7aa7ff;--bd:#2a3a31;--ok:#3fbf7a;--no:#ff7b6b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:10px 18px 22px;background:linear-gradient(135deg,var(--ac),var(--bl));color:#fff}
+header small{font-size:11px;opacity:.9;display:block;text-align:left}
+header h1{margin:14px 0 2px;font-size:clamp(28px,6vw,44px);letter-spacing:-.5px}
+header p{margin:0;opacity:.92}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;border-bottom:1px solid var(--bd)}
+nav button,.b{border:1px solid var(--bd);background:var(--cd);color:var(--tx);padding:8px 14px;border-radius:999px;cursor:pointer;font:inherit;white-space:nowrap;transition:0.2s}
+nav button.on,.b.p{background:var(--ac);color:#fff;border-color:var(--ac)}
+nav button:hover,.b:hover{filter:brightness(0.95)}
+main{max-width:1000px;margin:0 auto;padding:16px}
+section{display:none;animation:fadeIn 0.3s ease}
+section.on{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.c{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:0 0 14px;box-shadow:0 2px 8px rgba(0,0,0,0.02)}
+.c h3{margin:0 0 6px}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+code,.syn{font-family:ui-monospace,Consolas,monospace;background:var(--bg);padding:2px 6px;border-radius:6px;color:var(--bl)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chips .b{padding:5px 11px;font-size:13px}
+.chips .b.on{background:var(--bl);color:#fff;border-color:var(--bl)}
+.lv{font-size:11px;color:var(--mu)}
+.w{overflow-x:auto}
+table.g{border-collapse:collapse;font-size:13px;width:100%;min-width:400px}
+.g th{background:var(--bg);color:var(--mu);font-weight:500;padding:5px 8px;border:1px solid var(--bd)}
+.g td{border:1px solid var(--bd);padding:0}
+.g input{width:100%;min-width:80px;border:0;padding:6px 7px;background:var(--cd);color:var(--tx);font:inherit;outline:none}
+.g input:focus{outline:2px solid var(--ac);outline-offset:-2px;background:#fff;z-index:2;position:relative}
+.g input.t{background:#fff8d6;color:#222;font-weight:600}
+.ed{min-height:200px;border:1px solid var(--bd);border-radius:10px;padding:14px;background:#fff;color:#111}
+.ed table{border-collapse:collapse;width:100%}
+.ed td,.ed th{border:1px solid #999;padding:4px 10px}
+.tb{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.ok{color:var(--ok);font-weight:600}
+.no{color:var(--no);font-weight:600}
+input.i,textarea{padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--cd);color:var(--tx);font:inherit}
+textarea{width:100%;height:110px}
+select.i{padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--cd);color:var(--tx);font:inherit}
+.tb label{font-size:13px}
+label.o{display:block;padding:6px 0;cursor:pointer}
+ol,ul{padding-left:20px;margin:6px 0}
+.mu{color:var(--mu);font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+    <small>Materi Kuliah</small>
+    <h1>Aplikasi Komputer untuk Akuntansi</h1>
+    <p>Pengolahan Kata &amp; Spreadsheet untuk Keuangan, Jurnal, dan Laporan</p>
+</header>
+
+<nav id="nv">
+    <button data-t="t" class="">Teori</button>
+    <button data-t="w" class="on">Word / Docs</button>
+    <button data-t="x">Excel Akuntansi</button>
+    <button data-t="l">Lab Fungsi</button>
+    <button data-t="p">Studi Kasus</button>
+</nav>
+
+<main>
+<!-- BAGIAN TEORI -->
+<section id="t" class="">
+    <div class="c">
+        <h3>Materi Teori</h3>
+        <div class="chips" id="tm"><button class="b">Excel dalam Akuntansi</button><button class="b">Word &amp; Laporan Keuangan</button><button class="b">Fungsi Logika &amp; Lookup</button><button class="b on">Referensi Relatif &amp; Absolut</button></div>
+        <div id="tx"><h3>Referensi Relatif &amp; Absolut</h3><ul><li><b>Relatif (Misal: A1):</b> Posisi sel akan bergeser menyesuaikan baris/kolomnya jika di copy-paste.</li><li><b>Absolut (Misal: $A$1):</b> Ditandai dengan lambang dolar (tekan F4 di keyboard). Sangat penting dalam laporan pajak atau gaji, saat Anda mengunci tarif pajak PPN (misal 11% di satu sel teratas) untuk dikalikan dengan seluruh tabel di bawahnya tanpa bergeser.</li></ul></div>
+    </div>
+</section>
+
+<!-- BAGIAN WORD -->
+<section id="w" class="on">
+    <div class="g2" id="wc"><div class="c"><h3>Styles &amp; Heading</h3><p>Home → Styles. Terapkan Heading pada judul laporan keuangan, bab, dan subbab. Membantu struktur navigasi dan Daftar Isi.</p><ol><li>Blok teks judul</li><li>Pilih Home → Heading 1</li><li>Klik References → Table of Contents</li></ol></div><div class="c"><h3>Tabel Keuangan</h3><p>Insert → Table. Berguna untuk Neraca dan Laba Rugi sederhana di dokumen Word. Angka umumnya diset rata kanan.</p><ol><li>Insert → Table</li><li>Layout → Repeat Header Rows</li><li>Layout → Formula (=SUM(ABOVE))</li></ol></div><div class="c"><h3>Section Break</h3><p>Layout → Breaks → Next Page. Membuat halaman orientasi Landscape untuk tabel rekapan data yang sangat lebar tanpa mengganggu halaman potrait.</p><ol><li>Letakkan kursor di awal halaman</li><li>Layout → Breaks → Next Page</li><li>Ubah Orientation jadi Landscape</li></ol></div><div class="c"><h3>Mail Merge</h3><p>Mailings → Start Mail Merge. Sangat praktis untuk mengirim tagihan piutang (invoice/surat tagihan) ke ratusan pelanggan berdasarkan data Excel.</p><ol><li>Siapkan data pelanggan di Excel</li><li>Mailings → Select Recipients</li><li>Insert Merge Field</li></ol></div></div>
+    <div class="c">
+        <h3>Kanvas Interaktif Word</h3>
+        <p class="mu">Simulasi menyusun laporan keuangan. Terapkan Heading, tabel anggaran, dan daftar isi otomatis.</p>
+        <div class="tb" id="tb"><button class="b">Heading 1</button><button class="b">Heading 2</button><button class="b">Tabel Laporan</button><button class="b">Daftar Isi</button></div>
+        <div class="ed" id="ed" contenteditable="true">
+            <h2>Laporan Keuangan Tahunan</h2>
+            <p>Ketik isi laporan di sini. Pilih teks lalu klik tombol di atas untuk memformat.</p>
+            <h2>Neraca Pendapatan</h2>
+            <p>Ringkasan arus kas perusahaan periode ini.</p>
+        </div>
+        <p style="margin-top:10px"><a class="b p" href="https://docs.new" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block">Buka Google Docs baru ↗</a></p>
+    </div>
+</section>
+
+<!-- BAGIAN EXCEL -->
+<section id="x">
+    <div class="c">
+        <h3>Modul Excel Akuntansi</h3>
+        <div class="chips" id="xm"><button class="b on">Akuntansi: Jurnal &amp; Neraca</button><button class="b">Buku Besar dgn SUMIF</button><button class="b">Aritmatika &amp; Dasar</button><button class="b">Absolut ($) &amp; Gaji</button></div>
+        <div id="xb"><h3>Akuntansi: Jurnal &amp; Neraca</h3><p>Penerapan fungsi dalam siklus akuntansi. <code>VLOOKUP</code> untuk nama akun, <code>IF</code> untuk mengecek balance, dan fungsi aritmatika untuk total debit/kredit.</p><p><span class="syn">=VLOOKUP(A2,$G$2:$H$6,2,FALSE)  |  =SUM(C2:C3)  |  =IF(C4=D4,"BALANCE","SELISIH")</span></p><div id="gx"><div class="w"><table class="g"><tbody><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr><tr><th>1</th><td><input data-r="A1"></td><td><input data-r="B1"></td><td><input data-r="C1"></td><td><input data-r="D1"></td><td><input data-r="E1"></td></tr><tr><th>2</th><td><input data-r="A2"></td><td><input data-r="B2"></td><td><input data-r="C2"></td><td><input data-r="D2"></td><td><input data-r="E2"></td></tr><tr><th>3</th><td><input data-r="A3"></td><td><input data-r="B3"></td><td><input data-r="C3"></td><td><input data-r="D3"></td><td><input data-r="E3"></td></tr><tr><th>4</th><td><input data-r="A4"></td><td><input data-r="B4"></td><td><input data-r="C4"></td><td><input data-r="D4"></td><td><input data-r="E4"></td></tr><tr><th>5</th><td><input data-r="A5"></td><td><input data-r="B5"></td><td><input data-r="C5"></td><td><input data-r="D5"></td><td><input data-r="E5"></td></tr></tbody></table></div></div></div>
+        <p style="margin-top:10px"><a class="b p" href="https://sheets.new" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block">Buka Google Sheets baru ↗</a></p>
+    </div>
+</section>
+
+<!-- BAGIAN LAB FUNGSI -->
+<section id="l">
+    <div class="c">
+        <h3>Lab Fungsi: Dasar → Finansial</h3>
+        <p class="mu">Klik chip fungsi di bawah, ubah angka di sel, amati perubahan (sel <span style="background:#fff8d6;padding:0 4px;border-radius:3px;color:#000">kuning</span> = hasil otomatis rumus).</p>
+        <div class="chips" id="lm"><button class="b on">SLN</button><button class="b">PMT</button><button class="b">IF (Balance)</button><button class="b">SUM</button><button class="b">MAX/MIN</button><button class="b">SUMIF</button><button class="b">VLOOKUP</button></div>
+        <div id="lb"><h3>SLN</h3><div class="lv">Finansial</div><p>Menghitung penyusutan aktiva metode garis lurus: Harga Perolehan, Nilai Sisa (Residu), dan Umur Ekonomis.</p><p><span class="syn">=SLN(B1,B2,B3)</span></p><div id="gx"></div></div>
+    </div>
+</section>
+
+<!-- BAGIAN STUDI KASUS -->
+<section id="p">
+    <div class="c">
+        <h3>Praktikum &amp; Studi Kasus Akuntansi</h3>
+        <p class="mu">Ketik rumus Excel yang tepat di sel kuning (selalu awali dengan <code>=</code>). Setelah selesai klik Periksa.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+            <input class="i" id="nm" placeholder="Nama Mahasiswa"> 
+            <input class="i" id="nim" placeholder="NIM">
+        </div>
+        <p>Skor Anda: <b id="sc" style="font-size:18px;color:var(--ok)">0</b>/<span id="tot">10</span> <span class="mu">· Tersimpan di browser ini.</span></p>
+        <button class="b p" id="ex">Ekspor Data (untuk Dosen)</button>
+        <textarea id="tsv" hidden="" readonly="" style="margin-top:10px;font-family:monospace;font-size:12px"></textarea>
+    </div>
+    <div id="qs"><div class="c"><h3>Soal 1 <span class="lv">Praktek Excel</span></h3><p>Di C2, hitung beban penyusutan mesin per tahun menggunakan fungsi SLN. (Harga Beli A2, Residu B2, Umur C2)</p><div class="a"><div class="w"><table class="g"><tbody><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr><tr><th>1</th><td><input data-r="A1"></td><td><input data-r="B1"></td><td><input data-r="C1"></td><td><input data-r="D1"></td></tr><tr><th>2</th><td><input data-r="A2"></td><td><input data-r="B2"></td><td><input data-r="C2"></td><td><input data-r="D2" class="t"></td></tr><tr><th>3</th><td><input data-r="A3"></td><td><input data-r="B3"></td><td><input data-r="C3"></td><td><input data-r="D3"></td></tr></tbody></table></div></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div><div class="c"><h3>Soal 2 <span class="lv">Praktek Excel</span></h3><p>Di D2, cek keseimbangan Jurnal. Jika Total Debit (B2) sama dengan Total Kredit (C2), tampilkan "BALANCE", jika tidak "SELISIH". (Gunakan IF)</p><div class="a"><div class="w"><table class="g"><tbody><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr><tr><th>1</th><td><input data-r="A1"></td><td><input data-r="B1"></td><td><input data-r="C1"></td><td><input data-r="D1"></td></tr><tr><th>2</th><td><input data-r="A2"></td><td><input data-r="B2"></td><td><input data-r="C2"></td><td><input data-r="D2" class="t"></td></tr><tr><th>3</th><td><input data-r="A3"></td><td><input data-r="B3"></td><td><input data-r="C3"></td><td><input data-r="D3"></td></tr></tbody></table></div></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div><div class="c"><h3>Soal 3 <span class="lv">Praktek Excel</span></h3><p>Di E2 jumlahkan seluruh transaksi "Kas" (kolom C) dari tabel jurnal, gunakan SUMIF.</p><div class="a"><div class="w"><table class="g"><tbody><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr><tr><th>1</th><td><input data-r="A1"></td><td><input data-r="B1"></td><td><input data-r="C1"></td><td><input data-r="D1"></td><td><input data-r="E1"></td></tr><tr><th>2</th><td><input data-r="A2"></td><td><input data-r="B2"></td><td><input data-r="C2"></td><td><input data-r="D2"></td><td><input data-r="E2" class="t"></td></tr><tr><th>3</th><td><input data-r="A3"></td><td><input data-r="B3"></td><td><input data-r="C3"></td><td><input data-r="D3"></td><td><input data-r="E3"></td></tr><tr><th>4</th><td><input data-r="A4"></td><td><input data-r="B4"></td><td><input data-r="C4"></td><td><input data-r="D4"></td><td><input data-r="E4"></td></tr><tr><th>5</th><td><input data-r="A5"></td><td><input data-r="B5"></td><td><input data-r="C5"></td><td><input data-r="D5"></td><td><input data-r="E5"></td></tr></tbody></table></div></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div><div class="c"><h3>Soal 4 <span class="lv">Praktek Excel</span></h3><p>Tampilkan nama akun di E2 dari Kode Akun di D2 (mencari ke tabel referensi A2:B4) menggunakan VLOOKUP pencocokan persis.</p><div class="a"><div class="w"><table class="g"><tbody><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr><tr><th>1</th><td><input data-r="A1"></td><td><input data-r="B1"></td><td><input data-r="C1"></td><td><input data-r="D1"></td><td><input data-r="E1"></td></tr><tr><th>2</th><td><input data-r="A2"></td><td><input data-r="B2"></td><td><input data-r="C2"></td><td><input data-r="D2"></td><td><input data-r="E2" class="t"></td></tr><tr><th>3</th><td><input data-r="A3"></td><td><input data-r="B3"></td><td><input data-r="C3"></td><td><input data-r="D3"></td><td><input data-r="E3"></td></tr><tr><th>4</th><td><input data-r="A4"></td><td><input data-r="B4"></td><td><input data-r="C4"></td><td><input data-r="D4"></td><td><input data-r="E4"></td></tr><tr><th>5</th><td><input data-r="A5"></td><td><input data-r="B5"></td><td><input data-r="C5"></td><td><input data-r="D5"></td><td><input data-r="E5"></td></tr></tbody></table></div></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div><div class="c"><h3>Soal 5 <span class="lv">Praktek Excel</span></h3><p>Di C4 hitung pajak PPN atas omzet (B4) dengan mengalikan persentase pajak (B1). Kunci sel pajak B1 dengan absolut ($).</p><div class="a"><div class="w"><table class="g"><tbody><tr><th></th><th>A</th><th>B</th><th>C</th></tr><tr><th>1</th><td><input data-r="A1"></td><td><input data-r="B1"></td><td><input data-r="C1"></td></tr><tr><th>2</th><td><input data-r="A2"></td><td><input data-r="B2"></td><td><input data-r="C2"></td></tr><tr><th>3</th><td><input data-r="A3"></td><td><input data-r="B3"></td><td><input data-r="C3"></td></tr><tr><th>4</th><td><input data-r="A4"></td><td><input data-r="B4"></td><td><input data-r="C4" class="t"></td></tr><tr><th>5</th><td><input data-r="A5"></td><td><input data-r="B5"></td><td><input data-r="C5"></td></tr></tbody></table></div></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div><div class="c"><h3>Soal 6 <span class="lv">Praktek Excel</span></h3><p>Di B5 hitung total nilai persediaan (Total dari D2:D4).</p><div class="a"><div class="w"><table class="g"><tbody><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr><tr><th>1</th><td><input data-r="A1"></td><td><input data-r="B1"></td><td><input data-r="C1"></td><td><input data-r="D1"></td></tr><tr><th>2</th><td><input data-r="A2"></td><td><input data-r="B2"></td><td><input data-r="C2"></td><td><input data-r="D2"></td></tr><tr><th>3</th><td><input data-r="A3"></td><td><input data-r="B3"></td><td><input data-r="C3"></td><td><input data-r="D3"></td></tr><tr><th>4</th><td><input data-r="A4"></td><td><input data-r="B4"></td><td><input data-r="C4"></td><td><input data-r="D4"></td></tr><tr><th>5</th><td><input data-r="A5"></td><td><input data-r="B5" class="t"></td><td><input data-r="C5"></td><td><input data-r="D5"></td></tr><tr><th>6</th><td><input data-r="A6"></td><td><input data-r="B6"></td><td><input data-r="C6"></td><td><input data-r="D6"></td></tr></tbody></table></div></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div><div class="c"><h3>Soal 7 <span class="lv">Teori Akuntansi</span></h3><p>Dalam siklus akuntansi di Excel, fungsi VLOOKUP sangat bermanfaat untuk...</p><div class="a"><label class="o"><input type="radio" name="q6" value="0"> Menjumlahkan total neraca akhir</label><label class="o"><input type="radio" name="q6" value="1"> Mengambil Nama Akun secara otomatis dari sheet Bagan Akun berdasarkan Kode Akun</label><label class="o"><input type="radio" name="q6" value="2"> Menghitung penyusutan aset tetap per bulan</label></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div><div class="c"><h3>Soal 8 <span class="lv">Teori Akuntansi</span></h3><p>Manakah pernyataan yang benar mengenai penggunaan Absolute Reference ($) dalam Excel?</p><div class="a"><label class="o"><input type="radio" name="q7" value="0"> Hanya digunakan untuk mengubah teks menjadi huruf kapital</label><label class="o"><input type="radio" name="q7" value="1"> Mengunci baris atau kolom agar tidak bergeser ketika rumus disalin (copy-paste) ke sel lain</label><label class="o"><input type="radio" name="q7" value="2"> Mengunci seluruh worksheet agar tidak bisa diedit oleh pengguna lain</label></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div><div class="c"><h3>Soal 9 <span class="lv">Teori Akuntansi</span></h3><p>Pada laporan keuangan (Word), jika sebuah tabel neraca sangat panjang hingga berpindah ke halaman berikutnya, fitur apa yang membuat Judul Kolom ikut tampil di halaman selanjutnya?</p><div class="a"><label class="o"><input type="radio" name="q8" value="0"> Repeat Header Rows (Table Layout)</label><label class="o"><input type="radio" name="q8" value="1"> Section Break - Next Page</label><label class="o"><input type="radio" name="q8" value="2"> Insert Caption pada tabel</label></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div><div class="c"><h3>Soal 10 <span class="lv">Teori Akuntansi</span></h3><p>Untuk mengirim dokumen tagihan (invoice) masal kepada ratusan client dengan nominal yang berbeda-beda tanpa membuat dokumen satu-satu, kita dapat mengandalkan fitur di MS Word yaitu...</p><div class="a"><label class="o"><input type="radio" name="q9" value="0"> Table of Contents</label><label class="o"><input type="radio" name="q9" value="1"> Track Changes</label><label class="o"><input type="radio" name="q9" value="2"> Mail Merge</label></div><p><button class="b p">Periksa &amp; Simpan</button> <span class="r"></span></p></div></div>
+</section>
+</main>
+
+<script>
+// UTILITAS EXCEL ENGINE
+const $ = s => document.querySelector(s), 
+      colN = i => String.fromCharCode(65 + i), 
+      num = x => typeof x === 'number' && !isNaN(x);
+const eq = (a, b) => typeof a == 'string' && typeof b == 'string' ? a.toLowerCase() == b.toLowerCase() : a == b;
+const n = a => a.flat(9).filter(num);
+function m(x, k) {
+    if (typeof k == 'string' && /^(<=|>=|<>|<|>|=)/.test(k)) {
+        const [, o, v] = k.match(/^(<=|>=|<>|<|>|=)(.*)/), y = isNaN(+v) ? v : +v;
+        return {'<': x < y, '>': x > y, '<=': x <= y, '>=': x >= y, '<>': !eq(x, y), '=': eq(x, y)}[o];
+    }
+    return eq(x, k);
+}
+
+// DEFINISI FUNGSI EXCEL (Termasuk Finansial Dasar)
+const F = {
+    IFERROR: (x, v) => (num(x) && isFinite(x)) || (typeof x == 'string' && x[0] != '#') ? x : v,
+    UPPER: x => String(x).toUpperCase(),
+    LOWER: x => String(x).toLowerCase(),
+    LEFT: (x, k = 1) => String(x).slice(0, k),
+    RIGHT: (x, k = 1) => String(x).slice(-k),
+    LEN: x => String(x).length,
+    COUNTA: (...a) => a.flat(9).filter(x => x !== '').length,
+    ABS: Math.abs,
+    SUM: (...a) => n(a).reduce((x, y) => x + y, 0),
+    AVERAGE: (...a) => { const v = n(a); return v.reduce((x, y) => x + y, 0) / (v.length || 1); },
+    MAX: (...a) => Math.max(...n(a)),
+    MIN: (...a) => Math.min(...n(a)),
+    COUNT: (...a) => n(a).length,
+    ROUND: (x, d = 0) => Math.round(x * 10 ** d) / 10 ** d,
+    IF: (c, a, b = false) => c ? a : b,
+    IFS: (...a) => { for (let i = 0; i < a.length; i += 2) if (a[i]) return a[i + 1]; return '#N/A'; },
+    AND: (...a) => a.flat(9).every(Boolean),
+    OR: (...a) => a.flat(9).some(Boolean),
+    NOT: x => !x,
+    COUNTIF: (r, k) => r.flat(9).filter(x => m(x, k)).length,
+    SUMIF: (r, k, s = r) => { const A = r.flat(9), B = s.flat(9); return A.reduce((t, x, i) => m(x, k) && num(B[i]) ? t + B[i] : t, 0); },
+    VLOOKUP: (v, t, i, e = true) => { let k = -1; if (e === false || e === 0) k = t.findIndex(r => eq(r[0], v)); else t.forEach((r, j) => { if (r[0] <= v) k = j; }); return k < 0 ? '#N/A' : (t[k][i - 1] ?? '#REF'); },
+    XLOOKUP: (v, l, r, nf = '#N/A') => { const i = l.flat(9).findIndex(x => eq(x, v)); return i < 0 ? nf : r.flat(9)[i]; },
+    INDEX: (r, i, j = 1) => r[i - 1]?.[j - 1] ?? '#REF',
+    MATCH: (v, r, t = 1) => { const L = r.flat(9), i = t === 0 ? L.findIndex(x => eq(x, v)) : L.reduce((p, x, k) => x <= v ? k : p, -1); return i < 0 ? '#N/A' : i + 1; },
+    
+    // Fungsi Finansial Akuntansi
+    SLN: (c, s, l) => (c - s) / l, // Straight-Line Depreciation: (Cost - Salvage) / Life
+    PMT: (r, n, p) => r === 0 ? -(p / n) : -(p * r) / (1 - Math.pow(1 + r, -n)) // Payment for a loan based on constant payments and rate
+};
+
+// EXCEL KANVAS ENGINE
+function Sheet(el, data, rows, cols, target) {
+    const S = { data: { ...data } };
+    const get = (r, st = []) => {
+        let v = S.data[r];
+        if (v === undefined || v === '') return '';
+        if (typeof v == 'number') return v;
+        v = String(v);
+        if (v[0] == '=') {
+            if (st.includes(r)) throw 0;
+            return calc(v, [...st, r]);
+        }
+        return v.trim() === '' || isNaN(+v) ? v : +v;
+    };
+    
+    function calc(f, st) {
+        const C = r => { const v = get(r, st); return v === '' ? 0 : v; };
+        const R = (a, b) => {
+            const p = x => { const q = x.match(/([A-Z]+)(\d+)/); return [q[1].charCodeAt(0) - 65, +q[2]]; };
+            const [c1, r1] = p(a), [c2, r2] = p(b), o = [];
+            for (let r = r1; r <= r2; r++) {
+                const w = [];
+                for (let c = c1; c <= c2; c++) w.push(get(colN(c) + r, st));
+                o.push(w);
+            }
+            return o;
+        };
+        const s = f.slice(1).replace(/\$/g, '').replace(/\bTRUE\b/g, 'true').replace(/\bFALSE\b/g, 'false')
+                   .replace(/([A-Z]+\d+):([A-Z]+\d+)/g, 'R("$1","$2")')
+                   .replace(/(?<!")\b([A-Z]{1,2}\d+)\b(?!")/g, 'C("$1")')
+                   .replace(/(\d+(?:\.\d+)?)%/g, '($1/100)')
+                   .replace(/<>/g, '!=')
+                   .replace(/(?<![<>!=])=(?!=)/g, '==')
+                   .replace(/\^/g, '**')
+                   .replace(/&/g, '+');
+        try {
+            const r = new Function('C', 'R', ...Object.keys(F), 'return ' + s)(C, R, ...Object.values(F));
+            return typeof r == 'boolean' ? (r ? 'TRUE' : 'FALSE') : (r === undefined || (num(r) && !isFinite(r)) ? '#DIV/0!' : r);
+        } catch (e) {
+            return '#ERROR';
+        }
+    }
+    
+    S.val = r => { try { return get(r); } catch (e) { return '#REF!'; } };
+    const show = r => {
+        let v;
+        try { v = get(r); } catch (e) { return '#REF!'; }
+        return num(v) ? (Number.isInteger(v) ? v : +v.toFixed(2)).toLocaleString('id-ID') : v;
+    };
+    
+    let h = '<table class="g"><tr><th></th>' + [...Array(cols)].map((_, c) => `<th>${colN(c)}</th>`).join('') + '</tr>';
+    for (let r = 1; r <= rows; r++) {
+        h += `<tr><th>${r}</th>` + [...Array(cols)].map((_, c) => {
+            const id = colN(c) + r;
+            return `<td><input data-r="${id}"${id == target ? ' class="t"' : ''}></td>`;
+        }).join('') + '</tr>';
+    }
+    el.innerHTML = '<div class="w">' + h + '</table></div>';
+    
+    const ins = [...el.querySelectorAll('input')], ref = () => ins.forEach(i => { if (document.activeElement !== i) i.value = show(i.dataset.r); });
+    el.addEventListener('focusin', e => { if (e.target.dataset.r) e.target.value = S.data[e.target.dataset.r] ?? ''; });
+    el.addEventListener('change', e => { S.data[e.target.dataset.r] = e.target.value; ref(); });
+    el.addEventListener('focusout', ref);
+    ref();
+    return S;
+}
+
+// NAVIGASI
+document.querySelectorAll('#nv button').forEach(b => b.onclick = () => {
+    document.querySelectorAll('#nv button,section').forEach(e => e.classList.remove('on'));
+    b.classList.add('on');
+    $('#' + b.dataset.t).classList.add('on');
+});
+
+// MATERI WORD
+const WC = [
+    ['Styles & Heading', 'Home → Styles. Terapkan Heading pada judul laporan keuangan, bab, dan subbab. Membantu struktur navigasi dan Daftar Isi.', ['Blok teks judul', 'Pilih Home → Heading 1', 'Klik References → Table of Contents']],
+    ['Tabel Keuangan', 'Insert → Table. Berguna untuk Neraca dan Laba Rugi sederhana di dokumen Word. Angka umumnya diset rata kanan.', ['Insert → Table', 'Layout → Repeat Header Rows', 'Layout → Formula (=SUM(ABOVE))']],
+    ['Section Break', 'Layout → Breaks → Next Page. Membuat halaman orientasi Landscape untuk tabel rekapan data yang sangat lebar tanpa mengganggu halaman potrait.', ['Letakkan kursor di awal halaman', 'Layout → Breaks → Next Page', 'Ubah Orientation jadi Landscape']],
+    ['Mail Merge', 'Mailings → Start Mail Merge. Sangat praktis untuk mengirim tagihan piutang (invoice/surat tagihan) ke ratusan pelanggan berdasarkan data Excel.', ['Siapkan data pelanggan di Excel', 'Mailings → Select Recipients', 'Insert Merge Field']]
+];
+$('#wc').innerHTML = WC.map(c => `<div class="c"><h3>${c[0]}</h3><p>${c[1]}</p><ol>${c[2].map(s => `<li>${s}</li>`).join('')}</ol></div>`).join('');
+
+const ed = $('#ed'), B = [
+    ['Heading 1', () => document.execCommand('formatBlock', false, 'H1')],
+    ['Heading 2', () => document.execCommand('formatBlock', false, 'H2')],
+    ['Tabel Laporan', () => document.execCommand('insertHTML', false, '<table style="width:100%;border-collapse:collapse;margin:10px 0" border="1"><tr><th style="padding:5px">Keterangan</th><th style="padding:5px">Debit</th><th style="padding:5px">Kredit</th></tr><tr><td style="padding:5px">Kas</td><td style="padding:5px;text-align:right">50.000</td><td style="padding:5px"></td></tr><tr><td style="padding:5px">Modal</td><td style="padding:5px"></td><td style="padding:5px;text-align:right">50.000</td></tr></table><p></p>')],
+    ['Daftar Isi', () => {
+        ed.querySelectorAll('.toc').forEach(e => e.remove());
+        const t = [...ed.querySelectorAll('h1,h2')].map(h => (h.tagName == 'H2' ? '&nbsp;&nbsp;&nbsp;' : '') + h.textContent).join('<br>');
+        ed.insertAdjacentHTML('afterbegin', `<div class="toc" style="background:#f4f4f4;padding:10px;margin-bottom:15px;border-radius:4px"><b>Daftar Isi</b><br>${t}</div>`);
+    }]
+];
+B.forEach(([t, f]) => {
+    const b = document.createElement('button');
+    b.className = 'b'; b.textContent = t;
+    b.onmousedown = e => { e.preventDefault(); ed.focus(); f(); };
+    $('#tb').append(b);
+});
+
+// MATERI EXCEL AKUNTANSI
+const bs = (f, l) => ({A1:'Bulan', B1:'Penjualan', A2:'Jan', B2:45000, A3:'Feb', B3:32000, A4:'Mar', B4:51000, A5:'Apr', B5:29000, A6:l, B6:f});
+const tblCOA = { G1:'Kode', H1:'Nama Akun', G2:111, H2:'Kas', G3:112, H3:'Piutang', G4:211, H4:'Hutang', G5:311, H5:'Modal', G6:411, H6:'Pendapatan' };
+
+const XM = [
+    {t: 'Akuntansi: Jurnal & Neraca', d: 'Penerapan fungsi dalam siklus akuntansi. <code>VLOOKUP</code> untuk nama akun, <code>IF</code> untuk mengecek balance, dan fungsi aritmatika untuk total debit/kredit.', s: '=VLOOKUP(A2,$G$2:$H$6,2,FALSE)  |  =SUM(C2:C3)  |  =IF(C4=D4,"BALANCE","SELISIH")', data: { ...tblCOA, A1: 'Kode', B1: 'Nama Akun', C1: 'Debit', D1: 'Kredit', A2: 111, B2: '=VLOOKUP(A2,$G$2:$H$6,2,FALSE)', C2: 50000, D2: 0, A3: 311, B3: '=VLOOKUP(A3,$G$2:$H$6,2,FALSE)', C3: 0, D3: 50000, A4: 'Total', C4: '=SUM(C2:C3)', D4: '=SUM(D2:D3)', B5: 'Cek Keseimbangan:', C5: '=IF(C4=D4,"BALANCE","SELISIH")' }, r: 5, c: 8},
+    {t: 'Buku Besar dgn SUMIF', d: 'Fungsi <code>SUMIF</code> digunakan untuk menjumlahkan semua mutasi Debit dan Kredit per satu jenis akun (misal Kas 111) berdasarkan tabel referensi Jurnal.', s: '=SUMIF(A2:A5,111,C2:C5)', data: { A1:'Kode', B1:'Transaksi', C1:'Debit', D1:'Kredit', A2:111, B2:'Setor Modal', C2:10000, D2:0, A3:111, B3:'Bayar Listrik', C3:0, D3:1000, A4:411, B4:'Jasa Servis', C4:0, D4:3000, A5:111, B5:'Terima Kas', C5:3000, D5:0, F1:'REKAP KAS (111)', F2:'Total Debit', G2:'=SUMIF(A2:A5,111,C2:C5)', F3:'Total Kredit', G3:'=SUMIF(A2:A5,111,D2:D5)', F4:'Saldo Akhir', G4:'=G2-G3' }, r: 5, c: 7},
+    {t: 'Aritmatika & Dasar', d: 'Rumus matematika dasar Excel wajib dikuasai untuk perhitungan diskon, PPN, dan faktur penjualan. Awali selalu dengan <code>=</code>.', s: '=B2*C2  |  =D2*11%  |  =D2+E2', data: { A1:'Barang', B1:'Qty', C1:'Harga', D1:'Subtotal', E1:'PPN 11%', F1:'Total Bayar', A2:'Kertas', B2:10, C2:45000, D2:'=B2*C2', E2:'=D2*11%', F2:'=D2+E2', A3:'Tinta', B3:2, C3:120000, D3:'=B3*C3', E3:'=D3*11%', F3:'=D3+E3', A4:'Total Invoice', D4:'=SUM(D2:D3)', E4:'=SUM(E2:E3)', F4:'=SUM(F2:F3)' }, r: 5, c: 6},
+    {t: 'Absolut ($) & Gaji', d: 'Referensi Absolut (<code>$</code>) mengunci posisi sel. Contoh: Tarif pajak di satu sel, dikalikan ke semua pegawai. Jika ditarik ke bawah, referensi pajak tidak akan bergeser.', s: '=B3*$F$1', data: { A2:'Nama', B2:'Bruto', C2:'Pajak', D2:'Netto', A3:'Ali', B3:5000000, C3:'=B3*$F$1', D3:'=B3-C3', A4:'Budi', B4:7500000, C4:'=B4*$F$1', D4:'=B4-C4', F1:'Tarif PPh', G1:0.05 }, r: 5, c: 7}
+];
+
+// LAB FUNGSI KHUSUS
+const LB = [
+    ['Finansial', 'SLN', '=SLN(B1,B2,B3)', 'Menghitung penyusutan aktiva metode garis lurus: Harga Perolehan, Nilai Sisa (Residu), dan Umur Ekonomis.', { A1:'Harga Beli', B1:50000000, A2:'Nilai Residu', B2:5000000, A3:'Umur (Thn)', B3:5, A5:'Penyusutan/Thn', B5:'=SLN(B1,B2,B3)' }],
+    ['Finansial', 'PMT', '=PMT(B2/12,B3,B1)', 'Menghitung cicilan/angsuran pinjaman bulanan tetap (menghasilkan angka negatif sebagai arus kas keluar).', { A1:'Jml Pinjaman', B1:120000000, A2:'Bunga/Thn', B2:0.12, A3:'Tenor (Bulan)', B3:60, A5:'Cicilan/Bulan', B5:'=PMT(B2/12,B3,B1)' }],
+    ['Akuntansi', 'IF (Balance)', '=IF(B2=C2,"Balance","Selisih")', 'Pengecekan kebenaran jurnal atau neraca lajur.', { A1:'Bagian', B1:'Debit', C1:'Kredit', A2:'Total Neraca', B2:450000, C2:450000, D1:'Status', D2:'=IF(B2=C2,"Balance","Selisih")' }],
+    ['Dasar', 'SUM', '=SUM(B2:B5)', 'Total nilai range sel. Standar untuk kolom jurnal.', bs('=SUM(B2:B5)', 'Total Omzet')],
+    ['Dasar', 'MAX/MIN', '=MAX(B2:B5)', 'Menemukan penjualan tertinggi/terendah.', bs('=MAX(B2:B5)', 'Tertinggi')],
+    ['Akuntansi', 'SUMIF', '=SUMIF(A2:A5,D2,B2:B5)', 'Akumulasi berdasarkan kriteria tertentu (Sangat penting untuk memindahkan saldo Jurnal ke Buku Besar).', { A1:'Kategori', B1:'Jumlah', A2:'Biaya', B2:500, A3:'Aset', B3:1000, A4:'Biaya', B4:250, D1:'Cari', D2:'Biaya', E1:'Total', E2:'=SUMIF(A2:A4,D2,B2:B4)' }],
+    ['Akuntansi', 'VLOOKUP', '=VLOOKUP(D2,A2:B5,2,FALSE)', 'Mencocokkan Kode Akun (Nomor) ke Nama Akun (Teks) dari Chart of Accounts.', { A1:'Kode', B1:'Akun', A2:100, B2:'Kas', A3:200, B3:'Hutang', A4:300, B4:'Modal', D1:'Input Kode', D2:200, E1:'Nama Akun', E2:'=VLOOKUP(D2,A2:B4,2,FALSE)' }]
+];
+
+function panel(cs, bx, list, mk) {
+    const draw = i => {
+        [...cs.children].forEach((b, j) => b.classList.toggle('on', j == i));
+        const x = list[i], o = mk(x);
+        bx.innerHTML = `<h3>${o.t}</h3>${o.l ? `<div class="lv">${o.l}</div>` : ''}<p>${o.d}</p><p><span class="syn">${o.s}</span></p><div id="gx"></div>`;
+        Sheet($('#gx'), o.data, o.r, o.c, o.t);
+    };
+    list.forEach((x, i) => {
+        const b = document.createElement('button');
+        b.className = 'b';
+        b.textContent = mk(x).t;
+        b.onclick = () => draw(i);
+        cs.append(b);
+    });
+    draw(0);
+}
+
+panel($('#xm'), $('#xb'), XM, x => x);
+panel($('#lm'), $('#lb'), LB, x => ({ t: x[1], l: x[0], s: x[2], d: x[3], data: x[4], r: Math.max(5, Object.keys(x[4]).length / 3 + 1 | 0), c: 5 }));
+
+// STUDI KASUS PRAKTIKUM
+const X = (q, data, t, a, f, r, c, req) => ({ k: 'x', q, data, t, a, f, r, c, req });
+const W = (q, o, a) => ({ k: 'w', q, o, a });
+const COADat = {A1:'Kode', B1:'Akun', A2:111, B2:'Kas', A3:112, B3:'Piutang', A4:411, B4:'Jasa'};
+
+const Q = [
+    X('Di C2, hitung beban penyusutan mesin per tahun menggunakan fungsi SLN. (Harga Beli A2, Residu B2, Umur C2)', { A1:'Harga', B1:'Residu', C1:'Umur', A2:10000000, B2:1000000, C2:5, D1:'Penyusutan' }, 'D2', 1800000, '=SLN(A2,B2,C2)', 3, 4),
+    X('Di D2, cek keseimbangan Jurnal. Jika Total Debit (B2) sama dengan Total Kredit (C2), tampilkan "BALANCE", jika tidak "SELISIH". (Gunakan IF)', { A1:'Transaksi', B1:'Debit', C1:'Kredit', D1:'Status', A2:'Jurnal Umum', B2:450000, C2:450000 }, 'D2', 'BALANCE', '=IF(B2=C2,"BALANCE","SELISIH")', 3, 4),
+    X('Di E2 jumlahkan seluruh transaksi "Kas" (kolom C) dari tabel jurnal, gunakan SUMIF.', { A1:'Tgl', B1:'Akun', C1:'Nominal', A2:1, B2:'Kas', C2:50000, A3:2, B3:'Beban', C3:2000, A4:3, B4:'Kas', C4:3000, D1:'Rekap', D2:'Kas', E1:'Total' }, 'E2', 53000, '=SUMIF(B2:B4,D2,C2:C4)', 5, 5),
+    X('Tampilkan nama akun di E2 dari Kode Akun di D2 (mencari ke tabel referensi A2:B4) menggunakan VLOOKUP pencocokan persis.', { ...COADat, D1:'Ketik Kode', D2:112, E1:'Nama Akun' }, 'E2', 'Piutang', '=VLOOKUP(D2,A2:B4,2,FALSE)', 5, 5),
+    X('Di C4 hitung pajak PPN atas omzet (B4) dengan mengalikan persentase pajak (B1). Kunci sel pajak B1 dengan absolut ($).', { A1:'Tarif PPN', B1:0.11, A3:'Layanan', B3:'Omzet', C3:'Pajak', A4:'Konsultasi', B4:5000000 }, 'C4', 550000, '=B4*$B$1', 5, 3, '\\$B\\$1'),
+    X('Di B5 hitung total nilai persediaan (Total dari D2:D4).', { A1:'Aset', B1:'Qty', C1:'Hrg Satuan', D1:'Nilai', A2:'Kertas', B2:10, C2:45000, D2:450000, A3:'Tinta', B3:5, C3:80000, D3:400000, A4:'Pulpen', B4:15, C4:5000, D4:75000, A5:'TOTAL:' }, 'B5', 925000, '=SUM(D2:D4)', 6, 4),
+    W('Dalam siklus akuntansi di Excel, fungsi VLOOKUP sangat bermanfaat untuk...', ['Menjumlahkan total neraca akhir', 'Mengambil Nama Akun secara otomatis dari sheet Bagan Akun berdasarkan Kode Akun', 'Menghitung penyusutan aset tetap per bulan'], 1),
+    W('Manakah pernyataan yang benar mengenai penggunaan Absolute Reference ($) dalam Excel?', ['Hanya digunakan untuk mengubah teks menjadi huruf kapital', 'Mengunci baris atau kolom agar tidak bergeser ketika rumus disalin (copy-paste) ke sel lain', 'Mengunci seluruh worksheet agar tidak bisa diedit oleh pengguna lain'], 1),
+    W('Pada laporan keuangan (Word), jika sebuah tabel neraca sangat panjang hingga berpindah ke halaman berikutnya, fitur apa yang membuat Judul Kolom ikut tampil di halaman selanjutnya?', ['Repeat Header Rows (Table Layout)', 'Section Break - Next Page', 'Insert Caption pada tabel'], 0),
+    W('Untuk mengirim dokumen tagihan (invoice) masal kepada ratusan client dengan nominal yang berbeda-beda tanpa membuat dokumen satu-satu, kita dapat mengandalkan fitur di MS Word yaitu...', ['Table of Contents', 'Track Changes', 'Mail Merge'], 2)
+];
+$('#tot').textContent = Q.length;
+
+let RS = {};
+try { RS = JSON.parse(localStorage.getItem('aka_res') || '{}'); } catch (e) {}
+try { $('#nm').value = localStorage.getItem('aka_nm') || ''; $('#nim').value = localStorage.getItem('aka_nim') || ''; } catch (e) {}
+
+['nm', 'nim'].forEach(i => $('#' + i).oninput = () => { try { localStorage.setItem('aka_' + i, $('#' + i).value); } catch (e) {} });
+
+const save = () => {
+    try { localStorage.setItem('aka_res', JSON.stringify(RS)); } catch (e) {}
+    $('#sc').textContent = Object.values(RS).filter(r => r.ok).length;
+};
+
+Q.forEach((q, i) => {
+    const d = document.createElement('div');
+    d.className = 'c';
+    d.innerHTML = `<h3>Soal ${i + 1} <span class="lv">${q.k == 'x' ? 'Praktek Excel' : 'Teori Akuntansi'}</span></h3><p>${q.q}</p><div class="a"></div><p><button class="b p">Periksa & Simpan</button> <span class="r"></span></p>`;
+    $('#qs').append(d);
+    
+    const a = d.querySelector('.a'), r = d.querySelector('.r');
+    let S;
+    
+    if (q.k == 'x') {
+        S = Sheet(a, q.data, q.r, q.c, q.t);
+    } else {
+        a.innerHTML = q.o.map((o, j) => `<label class="o"><input type="radio" name="q${i}" value="${j}"> ${o}</label>`).join('');
+    }
+    
+    d.querySelector('button').onclick = () => {
+        let ok, ans, m;
+        const sh = v => typeof v == 'number' ? v.toLocaleString('id-ID') : v;
+        const es = t => String(t).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        
+        if (q.k == 'x') {
+            ans = String(S.data[q.t] ?? '');
+            const v = S.val(q.t);
+            ok = ans[0] == '=' && (num(q.a) ? Math.abs(v - q.a) < .01 : eq(v, q.a)) && (!q.req || new RegExp(q.req).test(ans));
+            
+            m = ok ? `<span class="ok">✔ Benar</span> <span class="mu">(Hasil: ${es(sh(v))})</span>` 
+                   : `<span class="no">✘ Salah.</span> ` + (ans[0] == '=' ? `<span class="mu">Hasil Anda: ${es(sh(v))}. ${(q.req && num(v) ? 'Pastikan memakai sel terkunci ($).' : '')}</span>` : '<span class="mu">Harus diawali =.</span>') + `<br>Alternatif rumus benar: <code>${es(q.f)}</code> <span class="mu">→ ${es(sh(q.a))}</span>`;
+        } else {
+            const c = d.querySelector('input:checked');
+            if (!c) { r.textContent = 'Pilih salah satu jawaban.'; return; }
+            ans = q.o[+c.value];
+            ok = +c.value == q.a;
+            m = ok ? '<span class="ok">✔ Benar</span>' : `<span class="no">✘ Salah.</span><br>Jawaban benar: <b>${q.o[q.a]}</b>`;
+        }
+        
+        RS[i + 1] = { ok, ans, t: new Date().toLocaleString('id-ID'), m };
+        r.innerHTML = m;
+        save();
+    };
+    if (RS[i + 1]) r.innerHTML = (RS[i + 1].m || (RS[i + 1].ok ? '✔ Benar' : '✘ Salah'));
+});
+save();
+
+$('#ex').onclick = () => {
+    const t = $('#tsv');
+    t.hidden = !t.hidden;
+    t.value = ['Nama\tNIM\tSoal\tJawaban\tStatus\tWaktu'].concat(Object.entries(RS).map(([k, v]) => [$('#nm').value, $('#nim').value, k, v.ans.replace(/\s+/g, ' '), v.ok ? 'Benar' : 'Salah', v.t].join('\t'))).join('\n');
+    t.select();
+};
+
+// TEORI KONTEN
+const TH = [
+    ['Excel dalam Akuntansi', '<p>Microsoft Excel sangat esensial dalam bidang akuntansi untuk menyusun jurnal, mem-posting ke buku besar, hingga menyusun laporan keuangan neraca dan laba rugi. Karena semuanya berbasis tabel terhubung.</p><ul><li><b>Otomatisasi & Akurasi:</b> Mengurangi kesalahan perhitungan manusia dalam melakukan <i>footing</i> (penjumlahan kolom) Debit/Kredit dan penentuan saldo akhir.</li><li><b>Fungsi Utama:</b> <code>SUM</code> (total neraca), <code>SUMIF</code> (rekap saldo per akun di Buku Besar), <code>VLOOKUP</code> (menarik nama akun otomatis dari bagan/Chart of Accounts), dan <code>IF</code> (mengecek status keseimbangan neraca).</li><li><b>Fungsi Finansial:</b> <code>SLN</code> (penyusutan aktiva metode garis lurus), <code>PMT</code> (menghitung nominal angsuran pinjaman/cicilan berbunga), dan <code>PV/FV</code> (nilai waktu uang).</li><li><b>Siklus Dasar di Excel:</b> Tabel Bagan Akun &rarr; Sheet Jurnal Umum &rarr; Sheet Buku Besar &rarr; Sheet Neraca Saldo &rarr; Laporan Keuangan (Income Statement & Balance Sheet).</li></ul>'],
+    ['Word & Laporan Keuangan', '<p>Selain Excel untuk kalkulasi, <b>Word</b> digunakan sebagai platform penyusunan Laporan Tahunan perusahaan dan analisis tertulis laporan keuangan.</p><ul><li><b>Tabel Finansial:</b> Meskipun dari Excel, penyajian akhir format cetak biasanya diletakkan dalam Word menggunakan fitur Paste Link agar angkanya terus ter-update secara otomatis jika ada revisi di Excel.</li><li><b>Mail Merge:</b> Digunakan untuk membuat kwitansi/invoice/tagihan otomatis kepada ratusan vendor atau client berdasarkan satu file <i>database</i> piutang Excel.</li><li><b>Styles & Daftar Isi:</b> Penggunaan Heading 1/2/3 yang disiplin sangat vital untuk menerbitkan laporan setebal ratusan halaman agar memiliki daftar isi rapi.</li></ul>'],
+    ['Fungsi Logika & Lookup', '<ul><li><b>VLOOKUP / XLOOKUP:</b> Ibarat buku telepon. Anda punya <code>Kode 111</code> di Jurnal, excel otomatis mengisi sel Nama Akun dengan teks <code>Kas</code>.</li><li><b>Fungsi IF / IFS:</b> Membantu auditor/akuntan internal mevalidasi dokumen. Misal <code>=IF(TotalDebit = TotalKredit, "OK", "CEK KEMBALI!")</code>.</li><li><b>SUMIF / COUNTIF:</b> Filter data. Misalnya, "Tolong hitungkan (SUM) semua pengeluaran jika (IF) nama posnya adalah Biaya Promosi."</li></ul>'],
+    ['Referensi Relatif & Absolut', '<ul><li><b>Relatif (Misal: A1):</b> Posisi sel akan bergeser menyesuaikan baris/kolomnya jika di copy-paste.</li><li><b>Absolut (Misal: $A$1):</b> Ditandai dengan lambang dolar (tekan F4 di keyboard). Sangat penting dalam laporan pajak atau gaji, saat Anda mengunci tarif pajak PPN (misal 11% di satu sel teratas) untuk dikalikan dengan seluruh tabel di bawahnya tanpa bergeser.</li></ul>']
+];
+
+const tm = $('#tm');
+TH.forEach((x, i) => {
+    const b = document.createElement('button');
+    b.className = 'b';
+    b.textContent = x[0].replace(/&amp;/g, '&');
+    b.onclick = () => {
+        [...tm.children].forEach((c, j) => c.classList.toggle('on', j == i));
+        $('#tx').innerHTML = '<h3>' + x[0] + '</h3>' + x[1];
+    };
+    tm.append(b);
+});
+tm.firstChild.click();
+</script>
+
+</body></html>
